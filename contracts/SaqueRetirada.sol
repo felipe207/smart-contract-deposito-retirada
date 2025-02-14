@@ -11,7 +11,7 @@ contract SaqueRetirada {
 
     // Função para depositar MATIC no contrato
     function depositar() external payable {
-        require(msg.value > 0, "O valor do depósito deve ser maior que 0");
+        require(msg.value > 0, "O valor do deposito deve ser maior que 0");
 
         // Atualiza o saldo do usuário
         saldos[msg.sender] += msg.value;
