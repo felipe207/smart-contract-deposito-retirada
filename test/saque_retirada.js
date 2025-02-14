@@ -34,7 +34,7 @@ contract("SaqueRetirada", (accounts) => {
   });
 
   it("não deve permitir retirada com saldo insuficiente", async () => {
-    const valorRetirada = web3.utils.toWei("2", "ether"); // Valor maior que o saldo
+    const valorRetirada = web3.utils.toWei("2", "ether");
     try {
       await instance.retirar(valorRetirada, { from: user });
       assert.fail("Retirada com saldo insuficiente deveria falhar");
@@ -70,10 +70,10 @@ contract("SaqueRetirada", (accounts) => {
   });
 
   it("não deve permitir retirada por outro usuário", async () => {
-    await instance.depositar({ from: user, value: amount }); // Depósito inicial
+    await instance.depositar({ from: user, value: amount }); 
     const valorRetirada = web3.utils.toWei("0.5", "ether");
     try {
-      await instance.retirar(valorRetirada, { from: anotherUser }); // Tentativa de retirada por outro usuário
+      await instance.retirar(valorRetirada, { from: anotherUser }); 
       assert.fail("Retirada por outro usuário deveria falhar");
     } catch (error) {
       assert.include(error.message, "Saldo insuficiente", "Mensagem de erro incorreta");
