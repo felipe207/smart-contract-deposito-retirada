@@ -31,7 +31,7 @@ Antes de começar, certifique-se de ter o seguinte instalado:
 
    ```
    PRIVATE_KEY=SUA_CHAVE_PRIVADA_AQUI
-   POLYGON_RPC_URL=https://polygon-rpc.com
+   POLYGONSCAN_API_KEY=SUA_CHAVE
    ```
 
    > **Atenção**: Nunca compartilhe sua chave privada. Certifique-se de adicionar `.env` ao seu `.gitignore`.
